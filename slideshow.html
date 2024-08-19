@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Slideshow</title>
+</head>
+<body>
+    <div class="slide">
+        <img class="myslides" src="collage.jpg" style="display:block; width: 100%;">
+        <img class="myslides" src="c2.jpg" style="width: 100%;">
+        <img class="myslides" src="c3.jpg" style="width: 100%;">
+        <img class="myslides" src="c4.jpg" style="width: 100%;">
+        <img class="myslides" src="c5.jpeg" style="width: 100%;">
+    </div>
+    <script>
+        let slideIndex = 0;
+        function showslides() {
+            let slides = document.getElementsByClassName("myslides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showslides, 3000);
+        }
+        showslides();
+    </script>
+</body>
+</html>
