@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BlossomBites & Gifts</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function loadContent(url) {
+            // Set the source of the content frame to the selected URL 
+            document.querySelector('.content-frame').src = url;
+            
+            // Hide initial and slideshow frames
+            document.querySelector('.initial-frame').style.display = 'none';
+            document.querySelector('.slide-frame').style.display = 'none';
+            
+            // Show the content frame
+            document.querySelector('.content-frame').style.display = 'block';
+        }
+        
+        // On page load, show the initial frame and hide the others
+        window.onload = function() {
+            document.querySelector('.initial-frame').style.display = 'block';
+            document.querySelector('.slide-frame').style.display = 'block';
+            document.querySelector('.content-frame').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <div class="top-bar">
+        <h1>BlossomBites & Gifts</h1>
+        <div class="search-box">
+            <input type="text" id="searches" name="searches" placeholder="search for flowers, cakes etc..">
+            <button type="button">search</button>
+        </div>
+    </div>
+    <div class="menu">
+        <a href="#" onclick="loadContent('plant.html'); return false;">Plants</a>
+        <a href="#" onclick="loadContent('flowers.html'); return false;">Flowers</a>
+        <a href="#" onclick="loadContent('cakes.html'); return false;">Cakes</a>
+        <a href="#" onclick="loadContent('personalised_gifts.html'); return false;">Personalised gifts</a>
+        <a href="#" onclick="loadContent('combos.html'); return false;">Combos</a>
+    </div>
+    <div class="content">
+        <div class="initial-frame">
+            <iframe class="frame" src="initial.html"></iframe>
+        </div>
+        <div class="slide-frame">
+            <iframe class="frame" src="slideshow.html"></iframe>
+        </div>
+        <iframe class="frame content-frame" style="display:none;"></iframe>
+    </div>
+</body>
+</html>
